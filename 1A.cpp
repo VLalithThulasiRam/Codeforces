@@ -12,7 +12,7 @@ int main(){
     if(n % a > 0)   x ++;
     if(m % a > 0)   y ++;
 
-    cout << x * y;
+    cout << (long long)x * (long long)y;
     
     return 0;
 }
