@@ -1,38 +1,35 @@
 #include <iostream>
-#include<vector>
+#include <vector>
+#include <unordered_map>
+
 using namespace std;
 
 void yo() {
-
-    vector<int> a;
-    int size, val, prev = -1, ans = 0;
+    int size;
     cin >> size;
 
-    for(int i = 0; i < size; i ++){
+    unordered_map<int, long long> c;
+    long long ans = 0;
+    
+    for (int i = 0; i < size; i++) {
+        int val;
         cin >> val;
-
-        if(prev != -1)  if(val - prev == 1) ans ++;
-
-        a.push_back(val);
-        prev = val;
+        
+        int t = val - i;
+        
+        ans += c[t];
+        
+        c[t] ++;
     }
-
-    for(int i = 0; i < size; i ++){
-        for(int j = i + 2; j < size; j ++){
-            if(j - i == a[j] - a[i]){
-                ans ++;
-            }
-        }
-    }
-
-    cout << ans << endl;
+    
+    cout << ans << "\n";
 }
 
 int main() {
-
+    
     int n;
     cin >> n;
-    while(n--) {
+    while (n--) {
         yo();
     }
     return 0;
