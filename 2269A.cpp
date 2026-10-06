@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cmath>
 
 using namespace std;
     
@@ -10,8 +9,8 @@ int main() {
 
     while(t--){
         cin >> n >> k;
-        k--;
-        cout << 2 * k + pow(2 , n - k) << endl;
+
+        cout << 2 * (k - 1) + (1LL << (n - k + 1)) << endl;
     }
     
     return 0;
